@@ -40,8 +40,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(require('./controllers/'));
 
 // routes =============================================================================
-require("./controller/apiRoutes");
-require("./controller/htmlRoutes");
+require(routes);
 
 // sync models (console log to test.)
 db.sequelize.sync({ force: false }).then(function() {
