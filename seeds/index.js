@@ -3,7 +3,7 @@ const seedEvent = require('./eventData');
 const userSeeds = require('./userData');
 
 const seedAll = async () => {
-  await sequelize.sync({ force: false });
+  await sequelize.sync({ force: true });
 
   await userSeeds();
 

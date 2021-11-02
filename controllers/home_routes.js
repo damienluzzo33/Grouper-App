@@ -1,6 +1,7 @@
 //* import the express router, as well as the user and event models
 const router = require('express').Router();
 const { User, Event } = require('../models');
+const authorization = require('../util/auth');
 
 //* get all events for homepage
 router.get('/', async (req, res) => {
