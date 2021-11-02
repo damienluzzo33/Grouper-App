@@ -9,6 +9,7 @@
     <title>Event Form</title>
 </header>
 <!-- ============================================================================================================================================================ -->
+
 <body>
 
     <body>
@@ -17,7 +18,7 @@
             <h3>Event Creation Form</h3>
         </div>
 
-       
+
 
 
         <!-- Location Field -->
@@ -28,7 +29,7 @@
 
 
 
-            <!-- Event Date Field -->
+        <!-- Event Date Field -->
         <div class="row">
             <div class="container">
                 <h5>Event Date</h5>
@@ -44,7 +45,7 @@
 
                 <input type="time" id="appt" name="appt" min="09:00" max="18:00" required>
 
-                
+
             </div>
             <!-- End Time Field -->
             <div class="container">
@@ -56,13 +57,40 @@
 
             <!-- Event category -->
 
-            <div class="container">
-                <h5>Event category</h5>
+            <form action="#" class = "container">
                 
-                  <input placeholder="Event"  type="text" class="validate">
-                  
-                </div>
-        </div>
+                  <label>
+                    <input name="group1" type="radio" checked />
+                    <span>Red</span>
+                  </label>
+                
+                
+                  <label>
+                    <input name="group1" type="radio" />
+                    <span>Yellow</span>
+                  </label>
+            
+                  <label>
+                    <input class="with-gap" name="group1" type="radio"  />
+                    <span>Green</span>
+                  </label>
+                
+               
+                  <label>
+                    <input name="group1" type="radio" disabled="disabled" />
+                    <span>Brown</span>
+                  </label>
+                
+              </form>
+
+        
+        
+            
+              
+       
+
+        <!-- name colon and every one of them has to have the same name -->
+
 
         <div class="container">
             <input type="button" value="Submit">
@@ -70,6 +98,7 @@
 
 
 
-
-
     </body>
+
+
+    
