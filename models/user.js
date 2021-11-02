@@ -1,5 +1,5 @@
 // require bcrypt for password with node package  =============================================================================
-var bcrypt = require("bcrypt-nodejs");
+var bcrypt = require("bcrypt");
 const sequelize = require('../config/connection');
 const { Model, DataTypes } = require('sequelize');
 
@@ -46,7 +46,7 @@ User.init(
     },
     {
         hooks: {
-            async beforePasswordCreate(newUserData) {
+            async beforeCreate(newUserData) {
                 newUserData.password = await bcrypt.hash(newUserData.password, 10);
                 return newUserData;
             },
@@ -56,7 +56,7 @@ User.init(
 		updatedAt: false,
 		freezeTableName: true,
 		underscored: true,
-		modelName: 'thread'
+		modelName: 'user'
     }
 );
 

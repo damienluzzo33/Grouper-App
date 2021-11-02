@@ -53,7 +53,7 @@ Event.init(
 		updatedAt: false,
 		freezeTableName: true,
 		underscored: true,
-		modelName: 'thread'
+		modelName: 'event'
 	}
 );
 
