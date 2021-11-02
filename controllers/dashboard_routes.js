@@ -1,9 +1,10 @@
 //* import the express router and the event model
 const router = require('express').Router();
 const { Event, User } = require('../../models');
+const authorization = require('../util/auth');
 
 //* get all user's events for user dashboard
-router.get('/', async (req, res) => {
+router.get('/', authorization, async (req, res) => {
     try {
         let userEvents = await Event.findAll({
             where: {
