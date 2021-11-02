@@ -25,17 +25,17 @@ Event.init(
 		},
 		start_time: {
 			type: DataTypes.TIME,
-			defaultValue: '00:00:00',
-			field: 'hour',
+			defaultValue: '00:00',
+			// field: 'hour',
 			allowNull: false
 		},
 		end_time: {
 			type: DataTypes.TIME,
-			defaultValue: '00:00:00',
-			field: 'hour',
+			defaultValue: '00:00',
+			// field: 'hour',
 			allowNull: false
 		},
-		eventCategory: {
+		event_category: {
 			type: DataTypes.STRING,
 			allowNull: false
 		},
