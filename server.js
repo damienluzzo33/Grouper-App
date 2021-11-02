@@ -17,7 +17,7 @@ const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
-    secret: 'grouper secret O.o',
+    secret: process.env.DB_SESSION_SECRET,
     cookie: {},
     resave: false,
     saveUninitialized: true,
