@@ -1,37 +1,41 @@
-const { eventData } = require('..models');
+const { Event } = require('../models');
 
 const eventData = [
   {
-    location: 'Austin', 
+    location: 'Austin',
+    event_name: 'event', 
     event_date: "October 10, 2021",
     start_time: "14:00",
     end_time: "18:00",
-    eventCategory: "poker night"
+    event_category: "poker night"
   },
   {
-    location: 'Austin', 
+    location: 'Austin',
+    event_name: 'event', 
     event_date: "October 25, 2021",
     start_time: "16:00",
     end_time: "18:00",
-    eventCategory: "study group"
+    event_category: "study group"
   },
   {
-    location: 'Austin', 
+    location: 'Zoom',
+    event_name: 'online event', 
     event_date: "October 29, 2021",
     start_time: "17:00",
     end_time: "19:00",
-    eventCategory: "board games"
+    event_category: "board games"
   },
   {
-    location: 'Austin', 
+    location: 'Austin',
+    event_name: 'event', 
     event_date: "September 20, 2021",
     start_time: "12:00",
     end_time: "16:00",
-    eventCategory: "smashbros"
+    event_category: "smashbros"
   },
-] 
+]
 
-const eventData = () => eventData.bulkCreate(eventData);
+const seedEvent = () => Event.bulkCreate(eventData);
 
-module.export = seedeventData; 
+module.exports = seedEvent; 
 
