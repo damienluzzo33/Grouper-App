@@ -22,6 +22,21 @@ const createEventHandler = async (event) => {
     }
 };
 
-// const deleteEventHandler = async (event) => {
-    
-// }
+const deleteEventHandler = async (event) => {
+    if (event.target.hasAttribute('data-id')) {
+        const eventId = event.target.getAttribute('data-id');
+        const response = await fetch(`/api/events/${eventId}`, {
+            method: 'DELETE'
+        });
+
+        if (response.ok) document.location.replace('/dashboard');
+        else alert('Failed to delete event. Try again!')
+    }
+};
+
+const createButton = document.querySelector('#create-event-btn');
+createButton.addEventListener('submit', createEventHandler);
+
+const deleteButton = document.querySelector('#delete-event-btn');
+deleteButton.addEventListener('click', deleteEventHandler);
+
