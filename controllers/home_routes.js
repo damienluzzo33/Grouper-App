@@ -7,7 +7,11 @@ const authorization = require('../util/auth');
 router.get('/', async (req, res) => {
 	try {
 		const allEventData = await Event.findAll({
-			include: [{model: User}]
+			include: [{ 
+				model: User,
+				foreignKey: 'user_id',
+				as: 'user' 
+			}]
 		});
 		const events = allEventData.map((event) => event.get({ plain: true }));
         if (!events) {
@@ -27,7 +31,11 @@ router.get('/', async (req, res) => {
 router.get('/events/:id', authorization, async (req, res) => {
 	try {
 		const thisEventData = await Event.findByPk(req.params.id, {
-			include: [{ model: User }]
+			include: [{ 
+				model: User,
+				foreignKey: 'user_id',
+				as: 'user' 
+			}]
 		});
 		const event = thisEventData.get({ plain: true });
 		res.render('event', { event, loggedIn: req.session.loggedIn });

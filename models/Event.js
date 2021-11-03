@@ -15,7 +15,15 @@ Event.init(
 			type: DataTypes.STRING,
 			allowNull: false
 		},
+		in_person: {
+			type: DataTypes.BOOLEAN,
+			allowNull: false
+		},
 		event_name: {
+			type: DataTypes.STRING,
+			allowNull: false
+		},
+		event_description: {
 			type: DataTypes.STRING,
 			allowNull: false
 		},
