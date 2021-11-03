@@ -3,8 +3,8 @@ const loginFormHandler = async (event) => {
 	//*  prevent the default refresh from form submit
 	event.preventDefault();
 	//*  get the username and password values from the input fields
-	const username = document.querySelector('#loginUsername').value.trim();
-	const password = document.querySelector('#loginPassword').value.trim();
+	const username = document.querySelector('#login-username').value.trim();
+	const password = document.querySelector('#login-password').value.trim();
 
 	//*  if the username and password were submitted
 	if (username && password) {
@@ -30,9 +30,9 @@ const signupFormHandler = async (event) => {
 	//*  prevent the default page refresh
 	event.preventDefault();
 	//*  get the username, email, and password from the user based on values entered in signup form
-	const username = document.querySelector('#signupUsername').value.trim();
-	const email = document.querySelector('#signupEmail').value.trim();
-	const password = document.querySelector('#signupPassword').value.trim();
+	const username = document.querySelector('#signup-username').value.trim();
+	const email = document.querySelector('#signup-email').value.trim();
+	const password = document.querySelector('#signup-password').value.trim();
 
 	//*  if the username, email, and password are all not empty
 	if (username && email && password) {

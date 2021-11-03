@@ -1,9 +1,10 @@
 //* import the express router and the event model
 const router = require('express').Router();
+const authorization = require('../../util/auth');
 const { Event, User } = require('../../models');
 
 //* CREATE new event
-router.post('/', async (req, res) => {
+router.post('/', authorization, async (req, res) => {
     try {
         const dbEventData = await Event.create({
             location: req.body.location,
@@ -25,7 +26,7 @@ router.post('/', async (req, res) => {
 });
 
 //* DELETE an event
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', authorization, async (req, res) => {
     try {
         const selectedEvent = await Event.destroy({
             where: {

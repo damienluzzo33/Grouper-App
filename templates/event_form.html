@@ -1,131 +1,112 @@
-<!-- whats up twizzlers this is my code -->
-<header>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Google Materalize fonts -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Event Form</title>
-</header>
-<!-- ============================================================================================================================================================ -->
+</head>
 
 <body>
-
-    <body>
-        <div class="container">
-            <!-- header-->
-            <h3>Event Creation Form</h3>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo" style="margin-left: 15px;"> GROUPER</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="">Login / Sign Up</a></li>
+                <li><a href="">My Events</a></li>
+            </ul>
         </div>
-
-
-
-
-        <!-- Location Field -->
-        <div class="divider">
-            <h5>Location</h5>
-            <p>Stuff</p>
-        </div>
-
-
-
-        <!-- Event Date Field -->
-        <div class="row">
+    </nav>
+    <div class="container">
+        <!-- header-->
+        <h3>Create A New Event</h3>
+    </div>
+    <div class="row">
+        <form class="col s12" id="create-event-form">
+            <!-- Location Field -->
+            <div class="container">
+                <h5>Location</h5>
+                <label for="event-location">Choose the location of the event:</label>
+                <input type="text" id="event-location" name="event-location" placeholder="e.g. Radio Coffee & Beer"
+                    required>
+            </div>
+            <!-- Location Field -->
+            <div class="container">
+                <h5>Event Name</h5>
+                <label for="event-name">Choose the name of the event:</label>
+                <input type="text" id="event-name" name="event-name" placeholder="e.g. Trivia Night" required>
+            </div>
+            <!-- Event Date -->
             <div class="container">
                 <h5>Event Date</h5>
-
-                <label for="start">Start date:</label>
-                <input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31">
-
+                <label for="event-date">Choose a date for your event:</label>
+                <input type="date" id="event-date" name="event-date" min="2021-10-01" max="2022-12-31" required>
             </div>
             <!-- Start Time Field -->
             <div class="container">
                 <h5>Start Time</h5>
-                <label for="appt">Choose a time for your meeting:</label>
-
-                <input type="time" id="appt" name="appt" min="09:00" max="18:00" required>
-
-
+                <label for="start-time">Choose a start time for your event:</label>
+                <input type="time" id="start-time" name="start-time" min="00:00" max="23:59" required>
             </div>
             <!-- End Time Field -->
             <div class="container">
                 <h5>End Time</h5>
-                <label for="appt">Choose a time for your meeting:</label>
-
-                <input type="time" id="appt" name="appt" min="09:00" max="18:00" required>
+                <label for="end-time">Choose an end time for your event:</label>
+                <input type="time" id="end-time" name="end-time" min="00:00" max="23:59" required>
             </div>
-
             <!-- Event category -->
-
-            <form action="#" class="container">
+            <div class="container">
                 <h6>Event Category</h6>
                 <label>
                     <input name="category" type="radio" checked />
                     <span>Board Games</span>
                 </label>
-
-
                 <label>
                     <input name="category" type="radio" />
                     <span>Video Games</span>
                 </label>
-
                 <label>
                     <input name="category" type="radio" />
-                    <span>D&D</span>
+                    <span>Dungeons & Dragons</span>
                 </label>
-
-
                 <label>
                     <input name="category" type="radio" />
-                    <span>Poker</span>
+                    <span>Poker Night</span>
                 </label>
-
                 <label>
                     <input name="category" type="radio" />
                     <span>Sports</span>
                 </label>
-
                 <label>
                     <input name="category" type="radio" />
-                    <span>Study</span>
+                    <span>Study Session</span>
                 </label>
-
                 <label>
                     <input name="category" type="radio" />
                     <span>Book Club</span>
                 </label>
-
                 <label>
                     <input name="category" type="radio" />
-                    <span>Watch Party</span>
+                    <span>Netflix Watch Party</span>
                 </label>
-
                 <label>
                     <input name="category" type="radio" />
                     <span>Wine & Art Party</span>
                 </label>
-
-            </form>
-            
-            <div class="col s12">
-                <span class = "white-text">
-                    <h3>.</h3>
-                </span>
-               
             </div>
-
-
-
-
-
             <!-- name colon and every one of them has to have the same name -->
-
-            
-            <div class="container">
-                <input type="button" value="Submit">
+            <div class="container" style="margin-top: 30px;">
+                <a type="submit" class="waves-effect waves-light btn"><i class="material-icons left">send</i>submit</a>
             </div>
+        </form>
+    </div>
+</body>
 
-
-
-    </body>
+</html>
