@@ -30,8 +30,8 @@ router.delete('/:id', authorization, async (req, res) => {
     try {
         const selectedEvent = await Event.destroy({
             where: {
-                user_id = req.session.userId,
-                id = req.params.id
+                user_id: req.session.userId,
+                id: req.params.id
             }
         })
         const event = selectedEvent.get({ plain: true });

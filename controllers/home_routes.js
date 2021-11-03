@@ -15,11 +15,9 @@ router.get('/', async (req, res) => {
 		});
 		const events = allEventData.map((event) => event.get({ plain: true }));
         if (!events) {
-            res.status(200).json({ message: "No Events" })
             res.render('homepage', { events, loggedIn: req.session.loggedIn });
-            return;;
+            return;
         }
-        res.status(200).json(events);
 		res.render('homepage', { events, loggedIn: req.session.loggedIn });
 	} catch (err) {
 		console.log(err);
@@ -44,3 +42,5 @@ router.get('/events/:id', authorization, async (req, res) => {
 		res.status(500).json(err);
 	}
 });
+
+module.exports = router;
