@@ -1,0 +1,42 @@
+<div class="col s12 m7">
+    <div class="card horizontal">
+        <div class="card-image">
+            <img src="./image/download.jpeg">
+        </div>
+        <div class="card-stacked">
+            <div class="card-content">
+                <h4> {{event_name}} </h4>
+                <h5> By: {{user.username}} </h5>
+                <p> {{event_date}} </p>
+                <p> {{start_time}} to {{end_time}} </p>
+            </div>
+            <div class="card-action">
+                <h5>{{event_category}}</h5>
+                <p>{{event_description}}</p>
+                <a href="#">This is a link</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col s9">
+            <h5 class="black-text">Contact</h5>
+            <a class="waves-effect waves-light btn-floating" href=`mailto:{{user.email}}`>
+                <i class="materialize-icon">mail</i>
+            </a>
+        </div>
+        <div class="col s3">
+            <h5 class="black-text">Location</h5>
+            <ul>
+                {{#if in_person}}
+                <li>Austin, Texas</li>
+                <li>{{location}}</li>
+                {{else}}
+                <li>Virtual Event</li>
+                <li><a href=`{{location}}`>Zoom Link For This Event</a></li>
+                {{/if}}
+            </ul>
+        </div>
+    </div>
+</div>
