@@ -6,13 +6,13 @@ const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
-const routes = require('./controllers');
-const helpers = require('./utils/helpers');
+const router = require('./controllers');
+const helpers = require('./util/helpers');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// sequalize store =============================================================================
+// sequelize store =============================================================================
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
@@ -37,13 +37,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(require('./controllers/'));
-
 // routes =============================================================================
-require(routes);
+app.use(router);
 
 // sync models (console log to test.)
-db.sequelize.sync({ force: false }).then(function() {
+sequelize.sync({ force: false }).then(function() {
     app.listen(PORT, function() {
         console.log(`Grouper App listening on port ${PORT}!`);
     });
