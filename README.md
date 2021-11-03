@@ -10,26 +10,14 @@
 
 -  Team Members: Kalvin Nguyen, Damien Luzzo, Fox Rigney, Yafet Amare
 
-# Discription
+# Description
 
 The Grouper App was designed to create events and bring a group of individuals together for events at specific time, date, and locations.
 <!-- Grouper is an application based is Austin Texas to helps people create events remotely or socially and helps people connect with friends and family.
 our main goal is  -->
 
-# Requirements:
-
-## Technologies Used: 
--
--
--
-
-
 # Initials WireFrame Sketch: 
-![image name](./templates/image/Readme.image/wireframe.png)
-
-![image name](./templates/image/Readme.image/user_login.png)
-
-![image name](./templates/image/Readme.image/event_create_screenshot.png)
+![image name](./templates/image/Readme.image/wireframe.png)   ![image name](./templates/image/Readme.image/user_login.png)   ![image name](./templates/image/Readme.image/event_create_screenshot.png)
 
 # Page Navigation 
 
@@ -38,20 +26,25 @@ our main goal is  -->
 ### heare is a page where you can sign up and login this way your events will be logged and saved. 
 
 ![image name](./templates/image/Readme.image/event.log.png),
+
+### Page to loge your events 
+
 # Future Development
 
+- Make it avelable nationwide 
 -
--
+# Requirements:
 
-# Built Using 
- -Bootstrap
- -Materialize 
- -NODE
- -SQL
- -
- -
- -
+## Technologies Used: 
 
+ - Materialize 
+ - NODE
+ - MySQL
+ - Heroku
+ - Express
+ - Handlebars
+ - API
+ - Moment.js
 
 # Links 
 https://github.com/damienluzzo33/Grouper-App
