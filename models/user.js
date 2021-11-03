@@ -1,45 +1,77 @@
 // require bcrypt for password with node package  =============================================================================
-var bcrypt = require("bcrypt-nodejs");
+var bcrypt = require("bcrypt");
 const sequelize = require('../config/connection');
+const { Model, DataTypes } = require('sequelize');
 
 // model  ==========================================================================================================================================================
 
-module.exports = function(sequalize, DataTypes) {
-    var User = sequalize.define("User", {
-        
+// module.exports = function(sequalize, DataTypes) {
+//     var User = sequalize.define("User", {
+
+class User extends Model {
+    validatePassword(loginPassword) {
+        return bcrypt.compare(loginPassword, this.password);
+    };
+};
+
+User.init(
+    {
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true,
+        },
+        username: {
+            type: DataTypes.STRING, 
+            defaultvalue: "someone",
+            allowNull: false, 
+        },
         // email 
         email: {
             type: DataTypes.STRING,
             allowNull: false,
             unique: true,
             validate: {
-            isEmail: true
-        }
-    },
-
+                isEmail: true
+            }
+        },
         password: {
             type: DataTypes.STRING, 
-            allowNull: false
+            allowNull: false,
+            validate: {
+                len: [5],
+            },
         }, 
-
-        userName: {
-            type: DataTypes.STRING, 
-            defaultvalue: "someone",
-            allowNull: false, 
+    },
+    {
+        hooks: {
+            async beforeCreate(newUserData) {
+                newUserData.password = await bcrypt.hash(newUserData.password, 10);
+                return newUserData;
+            },
         },
-    });
-}
+        sequelize,
+		timestamps: true,
+		updatedAt: false,
+		freezeTableName: true,
+		underscored: true,
+		modelName: 'user'
+    }
+);
+
+module.exports = User;
 
 // CHECK PASSWORD with database password. =============================================================================
-User.prototype.validPassword = function(password) {
-    return bcrypt.compareSync(password, this.password);
-};
+// User.prototype.validPassword = function(password) {
+//     return bcrypt.compareSync(password, this.password);
+// };
 
 // MAKE SURE THAT THE 
-User.addHook("beforeCreate", function (user) {
-    user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null
-);
-});
+// User.addHook("beforeCreate", function (user) {
+//     user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null
+// );
+// });
 
 // // come back a little bit confused on which ones to associate =============================================================================
 // User.associate = function(models) {
@@ -55,4 +87,4 @@ User.addHook("beforeCreate", function (user) {
 //     });
 // };
 
-return User; 
+// return User; 
