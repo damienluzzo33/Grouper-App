@@ -1,52 +1,54 @@
-    <div id="forms" class="row" style="margin-top: 100px;">
-        <div id="login-form" class="col l6 m6 s12 center-align">
-            <div class="col s12">
-                <div class="card-panel blue">
-                    <h4 class="white-text">LOGIN</h4>
-                    <div class="row">
-                        <form class="col s12">
-                            <div class="input-field">
-                                <i class="material-icons prefix white-text">account_circle</i>
-                                <input placeholder="username" id="login-username" type="text" class="validate">
-                            </div>
-                            <div class="input-field">
-                                <i class="material-icons prefix white-text">security</i>
-                                <input placeholder="password" id="login-password" type="password" class="validate">
-                            </div>
-                            <button class="btn white blue-text waves-effect waves-light" type="submit" name="action">Submit
-                                <i class="material-icons right">send</i>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="signup-form" class="col l6 m6 s12 center-align">
-            <div class="col s12">
-                <div class="card-panel teal">
-                    <h4 class="white-text">SIGN UP</h4>
-                    <div class="row">
-                        <form class="col s12">
-                            <div class="input-field">
-                                <i class="white-text material-icons prefix">email</i>
-                                <input placeholder="example@gmail.com" id="signup-email" type="email" class="validate">
-                            </div>
-                            <div class="input-field">
-                                <i class="white-text material-icons prefix">account_circle</i>
-                                <input placeholder="username" id="signup-username" type="text" class="validate">
-                            </div>
-                            <div class="input-field">
-                                <i class="white-text material-icons prefix">security
-                                </i>
-                                <input placeholder="password" id="signup-password" type="password" class="validate">
-                            </div>
-                            <button class="btn white teal-text waves-effect waves-light" type="submit" name="action">Submit
-                                <i class="material-icons right">send</i>
-                            </button>
-                        </form>
-                    </div>
+<div id="forms" class="row" style="margin-top: 100px;">
+    <div class="col l6 m6 s12 center-align">
+        <div class="col s12">
+            <div class="card-panel blue">
+                <h4 class="white-text">LOGIN</h4>
+                <div class="row">
+                    <form class="col s12" id="login-form" >
+                        <div class="input-field">
+                            <i class="material-icons prefix white-text">account_circle</i>
+                            <input placeholder="username" id="login-username" type="text" class="validate">
+                        </div>
+                        <div class="input-field">
+                            <i class="material-icons prefix white-text">security</i>
+                            <input placeholder="password" id="login-password" type="password" class="validate">
+                        </div>
+                        <button class="btn white blue-text waves-effect waves-light" type="submit" name="action" id="login-btn">Submit
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-    <script src="../public/js/login.js"></script>
+    <div class="col l6 m6 s12 center-align">
+        <div class="col s12">
+            <div class="card-panel teal">
+                <h4 class="white-text">SIGN UP</h4>
+                <div class="row">
+                    <form class="col s12" id="signup-form">
+                        <div class="input-field">
+                            <i class="white-text material-icons prefix">email</i>
+                            <input placeholder="example@gmail.com" id="signup-email" type="email" class="validate">
+                        </div>
+                        <div class="input-field">
+                            <i class="white-text material-icons prefix">account_circle</i>
+                            <input placeholder="username" id="signup-username" type="text" class="validate">
+                        </div>
+                        <div class="input-field">
+                            <i class="white-text material-icons prefix">security
+                            </i>
+                            <input placeholder="password" id="signup-password" type="password" class="validate">
+                        </div>
+                        <div class="input-field">
+                            <button class="btn white teal-text waves-effect waves-light" type="submit" name="action" id="signup-btn">Submit
+                                <i class="material-icons right">send</i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../public/js/login.js"></script>

@@ -17,8 +17,8 @@ router.get('/', authorization, async (req, res) => {
             res.render('dashboard', { events, loggedIn: req.session.loggedIn })
         }
         let sorted = events.sort((a,b) => {
-            let firstEventArr = a.event_date.split('-');
-            let secondEventArr = b.event_date.split('-');
+            let firstEventArr = a.event_date.split('/');
+            let secondEventArr = b.event_date.split('/');
             if (firstEventArr[2] !== secondEventArr[2]) {
                 return parseInt(firstEventArr[2]) - parseInt(secondEventArr[2]);
             } else if (firstEventArr[1] !== secondEventArr[1]) {
