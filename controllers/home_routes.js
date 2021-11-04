@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
 			include: [{ 
 				model: User,
 				foreignKey: 'user_id',
-				as: 'user' 
+				as: 'user'
 			}]
 		});
 		const events = allEventData.map((event) => event.get({ plain: true }));
@@ -25,6 +25,20 @@ router.get('/', async (req, res) => {
 	}
 });
 
+//* get the login page for the user
+router.get('/login', async (req, res) => {
+	try {
+		if (!req.session.loggedIn) {
+			res.render('login-signup');
+			return;
+		}
+		res.render('homepage');
+	} catch (err) {
+		console.log(err);
+		res.status(500).json(err);
+	}
+});
+
 //* get one event and use authorization middleware
 router.get('/events/:id', authorization, async (req, res) => {
 	try {
@@ -32,7 +46,7 @@ router.get('/events/:id', authorization, async (req, res) => {
 			include: [{ 
 				model: User,
 				foreignKey: 'user_id',
-				as: 'user' 
+				as: 'user'
 			}]
 		});
 		const event = thisEventData.get({ plain: true });
