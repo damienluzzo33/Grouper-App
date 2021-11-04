@@ -18,14 +18,17 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
     secret: process.env.DB_SESSION_SECRET,
-    cookie: {},
+    cookie: {
+        maxAge: 600000
+    },
     resave: false,
     saveUninitialized: true,
     store: new SequelizeStore({
         db: sequelize
     })
 };
-// express session middleware =============================================================================
+
+// express session middleware =========================================================
 app.use(session(sess));
 
 const hbs = exphbs.create({ helpers });
@@ -40,7 +43,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // routes =============================================================================
 app.use(router);
 
-// sync models (console log to test.)
+// sync models (console log to test) ==================================================
 sequelize.sync({ force: false }).then(function() {
     app.listen(PORT, function() {
         console.log(`Grouper App listening on port ${PORT}!`);

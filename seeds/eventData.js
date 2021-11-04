@@ -9,7 +9,7 @@ const eventData = [
     event_date: "November 10, 2021",
     start_time: "16:00",
     end_time: "19:00",
-    event_category: "board games",
+    event_category: "Board Games",
     user_id: 1
   },
   {
@@ -20,7 +20,7 @@ const eventData = [
     event_date: "October 15, 2021",
     start_time: "18:00",
     end_time: "21:00",
-    event_category: "video games",
+    event_category: "Video Games",
     user_id: 4
   },
   {
@@ -31,18 +31,18 @@ const eventData = [
     event_date: "October 19, 2021",
     start_time: "17:00",
     end_time: "20:00",
-    event_category: "trivia night",
+    event_category: "Trivia Night",
     user_id: 2
   },
   {
     location: 'My House (email me for address!)',
     in_person: true,
     event_name: 'Super Smash Bros',
-    event_description: 'We are playing Super Smash Brothers Melee on the N64. There will be four players per round, and as many rounds as it takes to crown a super smash champion! Come and join the fun, and BYOB!',
+    event_description: 'We are playing Super Smash Brothers Melee on the N64. There will be four players per round, and as many rounds as it takes to crown a super smash bros champion! Come and join the fun, and BYOB!',
     event_date: "September 20, 2021",
     start_time: "20:00",
     end_time: "23:00",
-    event_category: "video games",
+    event_category: "Super Smash Bros",
     user_id: 3
   },
 ]

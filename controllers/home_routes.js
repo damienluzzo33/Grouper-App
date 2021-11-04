@@ -25,10 +25,20 @@ router.get('/', async (req, res) => {
 	}
 });
 
+router.get('/create', authorization, async (req, res) => {
+	try {
+		res.render('create-event');
+	} catch (err) {
+		console.log(err);
+		res.status(500).json(err);
+	}
+})
+
 //* get the login page for the user
 router.get('/login', async (req, res) => {
 	try {
 		if (!req.session.loggedIn) {
+			
 			res.render('login-signup');
 			return;
 		}
@@ -50,7 +60,9 @@ router.get('/events/:id', authorization, async (req, res) => {
 			}]
 		});
 		const event = thisEventData.get({ plain: true });
-		res.render('event', { event, loggedIn: req.session.loggedIn });
+		const owner = (event.user_id === req.session.user_id);
+		// const attending
+		res.render('event', { event, owner: owner, loggedIn: req.session.loggedIn });
 	} catch (err) {
 		console.log(err);
 		res.status(500).json(err);
