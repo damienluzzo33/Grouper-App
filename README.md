@@ -39,7 +39,6 @@ Grouper is an application based in Austin, Texas that aims to helps people creat
 [Link to hosted application on Heroku]()
 ![Giphy of application]()
 
-# Screenshots
 
 ### This is the Homepage
 ![Homepage]()
@@ -98,10 +97,6 @@ Grouper is an application based in Austin, Texas that aims to helps people creat
 
 ![image name](./templates/image/Readme.image/event_create_screenshot.png)
 
-# Future Development
-
-* Allow event hosts to see the list of attendees for their events
-* Make application available world-wide
 * Add custom categories for event creation
 * Connect with other app-users nearby
 * Show suggestions for nearby events
