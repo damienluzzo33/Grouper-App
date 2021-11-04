@@ -29,7 +29,6 @@ our main goal is  -->
 
 ### Page to loge your events 
 
-
 # Future Development
 
 - Make it avelable nationwide 
