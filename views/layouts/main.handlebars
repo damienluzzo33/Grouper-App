@@ -13,6 +13,10 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Moment JS module -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <!-- Goggle Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap" rel="stylesheet">
     <!-- TITLE -->
     <title>Event Form</title>
 </head>
@@ -20,7 +24,7 @@
 <body>
     <nav>
         <div class="nav-wrapper">
-        <a href="" class="brand-logo"> GROUPER</a>
+        <a href="" class="brand-logo" style="margin-left: 15px;"><i class="material-icons">group</i> GROUPER</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             {{#if loggedIn}}
             <li><a href="/dashboard">Dashboard</a></li>
