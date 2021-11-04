@@ -4,18 +4,29 @@
 </div>
 <div class="row">
     <form class="col s12" id="create-event-form">
+        <!-- In Person Field -->
+        <div class="container">
+            <h5></h5>
+            <label for="event-proximity">Please check the box if this event will take place in person: </label>
+            <input type="checkbox" id="event-proximity" name="event-proximity" required>
+        </div>
         <!-- Location Field -->
         <div class="container">
             <h5>Location</h5>
-            <label for="event-location">Choose the location of the event:</label>
-            <input type="text" id="event-location" name="event-location" placeholder="e.g. Radio Coffee & Beer"
-                required>
+            <label for="event-location">Provide the physical location or a Zoom link to the event:</label>
+            <input type="text" id="event-location" name="event-location" placeholder="e.g. Radio Coffee & Beer" required>
         </div>
-        <!-- Location Field -->
+        <!-- Event Name -->
         <div class="container">
             <h5>Event Name</h5>
             <label for="event-name">Choose the name of the event:</label>
             <input type="text" id="event-name" name="event-name" placeholder="e.g. Trivia Night" required>
+        </div>
+        <!-- Event Description -->
+        <div class="container">
+            <h5>Event description</h5>
+            <label for="event-description">Provide your description for the event:</label>
+            <textarea cols="30" rows="10" id="event-description" name="event-description" placeholder="Enter the description here" required>
         </div>
         <!-- Event Date -->
         <div class="container">
@@ -40,50 +51,52 @@
             <h6>Event Category</h6>
             <label>
                 <input name="category" type="radio" checked />
-                <span>board games</span>
+                <span>Board Games</span>
             </label>
             <label>
                 <input name="category" type="radio" />
-                <span>video Games</span>
+                <span>Video Games</span>
             </label>
             <label>
                 <input name="category" type="radio" />
-                <span>dungeons & dragons</span>
+                <span>Dungeons & Dragons</span>
             </label>
             <label>
                 <input name="category" type="radio" />
-                <span>poker night</span>
+                <span>Poker Night</span>
             </label>
             <label>
                 <input name="category" type="radio" />
-                <span>sports</span>
+                <span>Sports</span>
             </label>
             <label>
                 <input name="category" type="radio" />
-                <span>study session</span>
+                <span>Study Session</span>
             </label>
             <label>
                 <input name="category" type="radio" />
-                <span>book club</span>
+                <span>Book Club</span>
             </label>
             <label>
                 <input name="category" type="radio" />
-                <span>netflix watch party</span>
+                <span>Netflix Watch Party</span>
             </label>
             <label>
                 <input name="category" type="radio" />
-                <span>wine & art party</span>
+                <span>Wine & Art Party</span>
             </label>
             <label>
                 <input name="category" type="radio" />
-                <span>trivia night</span>
+                <span>Trivia Night</span>
             </label>
         </div>
         <!-- name colon and every one of them has to have the same name -->
         <div class="container" style="margin-top: 30px;">
-            <a type="submit" class="waves-effect waves-light btn"><i class="material-icons left">send</i>submit</a>
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+            </button>
         </div>
     </form>
 </div>
 
-<script src="../public/js/createEvent.js"></script>
+<script src="./js/createEvent.js"></script>

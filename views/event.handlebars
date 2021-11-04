@@ -1,42 +1,60 @@
-<div class="col s12 m7">
-    <div class="card horizontal">
-        <div class="card-image">
-            <img src="./image/download.jpeg">
+<div style="margin-top: 15px;">
+    <div class="row center-align" style="width:100%;">
+        <div class="col s12 m6">
+            <img class="col s12" src="/image/board_games/board_games_2.jpg"
+                style="background-position:center; background-size:contain; height:100%;">
         </div>
-        <div class="card-stacked">
-            <div class="card-content">
-                <h4> {{event_name}} </h4>
-                <h5> By: {{user.username}} </h5>
-                <p> {{event_date}} </p>
-                <p> {{start_time}} to {{end_time}} </p>
+        <div class="col s12 m6 left-align">
+            <div>
+                <h4> {{event.event_name}} </h4>
+                <h5> By: {{event.user.username}} </h5>
+                <p> {{format_date event.event_date}} </p>
+                <p> {{format_time event.start_time}} to {{format_time event.end_time}} </p>
             </div>
-            <div class="card-action">
-                <h5>{{event_category}}</h5>
-                <p>{{event_description}}</p>
-                <a href="#">This is a link</a>
+            <div>
+                <h5>{{event.event_category}}</h5>
+                <p>{{event.event_description}}</p>
             </div>
         </div>
     </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col s9">
+    <div class="row center-align">
+        <div class="col s6">
             <h5 class="black-text">Contact</h5>
-            <a class="waves-effect waves-light btn-floating" href=`mailto:{{user.email}}`>
-                <i class="materialize-icon">mail</i>
+            <a class="waves-effect waves-light btn-floating" href="mailto:{{event.user.email}}">
+                <i class="material-icons">email</i>
             </a>
         </div>
-        <div class="col s3">
+        <div class="col s6">
             <h5 class="black-text">Location</h5>
             <ul>
-                {{#if in_person}}
+                {{#if event.in_person}}
+                <li>{{event.location}}</li>
                 <li>Austin, Texas</li>
-                <li>{{location}}</li>
                 {{else}}
                 <li>Virtual Event</li>
-                <li><a href=`{{location}}`>Zoom Link For This Event</a></li>
+                <li><a href="{{event.location}}">Zoom Link For This Event</a></li>
                 {{/if}}
             </ul>
         </div>
     </div>
+    <div class="row center-align">
+        <div class="col s12">
+            {{#if owner}}
+            <button class="btn red waves-effect waves-light white-text" data-id="{{event.id}}" type="submit" name="delete">Delete
+                <i class="material-icons right">delete_forever</i>
+            </button>
+            {{else}}
+                {{!-- {{#if attending}} --}}
+                <button class="btn blue waves-effect waves-light white-text" type="submit" name="rsvp">RSVP
+                    <i class="material-icons right">group_add</i>
+                </button>
+                {{!-- {{else}}
+                <button class="btn red waves-effect waves-light white-text" type="submit" name="delete">Rescind Invitation
+                    <i class="material-icons right">cancel</i>
+                </button>
+                {{/if}} --}}
+            {{/if}}
+        </div>
+    </div>
 </div>
+<script src="./js/createEvent.js"></script>
