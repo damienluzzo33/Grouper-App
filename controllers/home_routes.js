@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
 
 router.get('/create', authorization, async (req, res) => {
 	try {
-		res.render('create-event');
+		res.render('create-event', {loggedIn: req.session.loggedIn});
 	} catch (err) {
 		console.log(err);
 		res.status(500).json(err);
