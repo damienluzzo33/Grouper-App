@@ -13,7 +13,7 @@ router.post('/', async (req, res) => {
         req.session.save(() => {
             req.session.loggedIn = true;
             req.session.userId = newUserData.id;
-            
+
             res.status(200).json(newUserData);
         });
 
@@ -51,7 +51,7 @@ router.post('/login', async (req, res) => {
         //*  If password is valid, then create new log-in session
         req.session.save(() => {
             req.session.loggedIn = true;
-            req.session.userId = newUserData.id;
+            req.session.userId = dbUserData.id;
 
             res.json({ user: dbUserData, message: 'You are now logged in!' });
         });
