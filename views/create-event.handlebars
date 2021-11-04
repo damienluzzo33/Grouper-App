@@ -6,9 +6,15 @@
     <form class="col s12" id="create-event-form">
         <!-- In Person Field -->
         <div class="container">
-            <h5></h5>
+            {{!-- <h5></h5>
             <label for="event-proximity">Please check the box if this event will take place in person: </label>
-            <input type="checkbox" id="event-proximity" name="event-proximity" required>
+            <input type="checkbox" id="event-proximity" name="event-proximity" required> --}}
+            <p>
+                <label>
+                    <input type="checkbox" id="event-proximity" name="event-proximity"/>
+                    <span>Please check the box if this event will take place in person</span>
+                </label>
+            </p>
         </div>
         <!-- Location Field -->
         <div class="container">
@@ -26,7 +32,7 @@
         <div class="container">
             <h5>Event description</h5>
             <label for="event-description">Provide your description for the event:</label>
-            <textarea cols="30" rows="10" id="event-description" name="event-description" placeholder="Enter the description here" required>
+            <textarea cols="30" rows="10" id="event-description" name="event-description" placeholder="Enter the description here" required></textarea>
         </div>
         <!-- Event Date -->
         <div class="container">
@@ -50,43 +56,43 @@
         <div class="container">
             <h6>Event Category</h6>
             <label>
-                <input name="category" type="radio" checked />
+                <input name="category" type="radio" value="Board Games" checked />
                 <span>Board Games</span>
             </label>
             <label>
-                <input name="category" type="radio" />
+                <input name="category" type="radio" value="Video Games" />
                 <span>Video Games</span>
             </label>
             <label>
-                <input name="category" type="radio" />
+                <input name="category" type="radio" value="Dungeons & Dragons" />
                 <span>Dungeons & Dragons</span>
             </label>
             <label>
-                <input name="category" type="radio" />
+                <input name="category" type="radio" value="Poker Night" />
                 <span>Poker Night</span>
             </label>
             <label>
-                <input name="category" type="radio" />
+                <input name="category" type="radio" value="Sports" />
                 <span>Sports</span>
             </label>
             <label>
-                <input name="category" type="radio" />
+                <input name="category" type="radio" value="Study Session" />
                 <span>Study Session</span>
             </label>
             <label>
-                <input name="category" type="radio" />
+                <input name="category" type="radio" value="Book Club" />
                 <span>Book Club</span>
             </label>
             <label>
-                <input name="category" type="radio" />
+                <input name="category" type="radio" value="Netflix Watch Party" />
                 <span>Netflix Watch Party</span>
             </label>
             <label>
-                <input name="category" type="radio" />
+                <input name="category" type="radio" value="Wine & Art Party" />
                 <span>Wine & Art Party</span>
             </label>
             <label>
-                <input name="category" type="radio" />
+                <input name="category" type="radio" value="Trivia Night" />
                 <span>Trivia Night</span>
             </label>
         </div>

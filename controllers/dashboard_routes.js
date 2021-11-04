@@ -8,14 +8,20 @@ router.get('/', authorization, async (req, res) => {
     try {
         let userEvents = await Event.findAll({
             where: {
-                user_id: req.session.user_id,
+                user_id: req.session.userId,
             },
         });
 
+        let noEvents = false;
         let events = userEvents.map((event) => event.get({ plain: true }));
-        if (!events) {
-            res.render('dashboard', { events, loggedIn: req.session.loggedIn })
+
+        if (events.length === 0) {
+            noEvents = true;
+            // res.status(200).json(sorted);
+            res.render('dashboard', { noEvents: noEvents, loggedIn: req.session.loggedIn });
+            return;
         }
+
         let sorted = events.sort((a,b) => {
             let firstEventArr = a.event_date.split('/');
             let secondEventArr = b.event_date.split('/');
@@ -27,9 +33,9 @@ router.get('/', authorization, async (req, res) => {
                 return parseInt(firstEventArr[0]) - parseInt(secondEventArr[0])
             } else return 0;
         });
-        res.status(200).json(sorted);
-		res.render('dashboard', { sorted, loggedIn: req.session.loggedIn });
-    } catch {
+        // res.status(200).json(sorted);
+		res.render('dashboard', { sorted, noEvents: noEvents, loggedIn: req.session.loggedIn });
+    } catch (err) {
         console.log(err);
 		res.status(500).json(err);
     }

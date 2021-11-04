@@ -1,5 +1,13 @@
 <div class="container">
+    {{#if noEvents}}
+    <div class="center-align">
+        <h5>YOU HAVE NOT SAVED OR CREATED AN EVENT!</h5>
+    </div>
+    {{else}}
+
     {{#each events as |event|}}
-    {{> event-details}}
+    {{>event-details}}
     {{/each}}
+
+    {{/if}}
 </div>

@@ -36,8 +36,8 @@ router.delete('/:id', authorization, async (req, res) => {
                 id: req.params.id
             }
         })
-        const event = selectedEvent.get({ plain: true });
-        if (!event) {
+        // const event = selectedEvent.get({ plain: true });
+        if (!selectedEvent) {
             res.status(404).json({ message: "You can't delete this event... Try again." })
         }
         res.status(200).json({selectedEvent, message: "Event deleted successfully!" })
