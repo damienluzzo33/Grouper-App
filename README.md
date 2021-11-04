@@ -48,3 +48,5 @@ our main goal is  -->
 
 # Links 
 https://github.com/damienluzzo33/Grouper-App
+
+# License
