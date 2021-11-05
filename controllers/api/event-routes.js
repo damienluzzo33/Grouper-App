@@ -1,7 +1,7 @@
 //* import the express router and the event model
 const router = require('express').Router();
 const authorization = require('../../util/auth');
-const { Event, User } = require('../../models');
+const { Event } = require('../../models');
 
 //* CREATE new event
 router.post('/', authorization, async (req, res) => {

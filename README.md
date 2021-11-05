@@ -37,25 +37,28 @@ Grouper is an application based in Austin, Texas that aims to helps people creat
 - Check out the giphy to see a short demo, or watch our video recording of the application linked below.
 
 [Link to hosted application on Heroku]()
+
 ---
+
 ![Giphy of application](./public/image/Screenshots/project_2_giphy.gif)
 
 # Screenshots
 
 ### This is the Homepage
-![Homepage](./public/image/Screenshots/screenshot2.png)
+
+![Homepage](./public/image/Screenshots/screenshot2.jpg)
 ---
 ### This is the Login / Sign-Up page for the application
-![Login / Sign Up](./public/image/Screenshots/screenshot1.png)
+![Login / Sign Up](./public/image/Screenshots/screenshot1.jpg)
 ---
 ### This is where the user is able to create an event
-![Create Event](./public/image/Screenshots/screenshot4.png)
+![Create Event](./public/image/Screenshots/screenshot4.jpg)
 ---
 ### This is the User Dashboard
-![Dashboard](./public/image/Screenshots/screenshot5.png)
+![Dashboard](./public/image/Screenshots/screenshot5.jpg)
 ---
 ### This is the Event Preview Page
-![Event Details](./public/image/Screenshots/screenshot3.png)
+![Event Details](./public/image/Screenshots/screenshot3.jpg)
 ---
 
 # Features
