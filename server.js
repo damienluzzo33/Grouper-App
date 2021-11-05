@@ -1,6 +1,3 @@
-// pulls .env file data for auth
-require('dotenv').config();
-
 // Dependencies =============================================================================
 const path = require('path');
 const express = require('express');
@@ -8,6 +5,8 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const router = require('./controllers');
 const helpers = require('./util/helpers');
+
+require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -44,7 +43,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(router);
 
 // sync models (console log to test) ==================================================
-sequelize.sync({ force: true }).then(function() {
+sequelize.sync({ force: false }).then(function() {
     app.listen(PORT, function() {
         console.log(`Grouper App listening on port ${PORT}!`);
     });
