@@ -16,7 +16,7 @@ const saveEventHandler = async (event) => {
         });
 
         console.log(response.json())
-        let obj = response.json();
+        let obj = await response.json();
         allSavedEventIds.push(obj);
 
         localStorage.setItem('savedEvents', JSON.stringify(allSavedEventIds));
