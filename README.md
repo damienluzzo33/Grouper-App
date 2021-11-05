@@ -25,6 +25,8 @@ The Grouper App was designed to allow users of all backgrounds to create events 
 
 Grouper is an application based in Austin, Texas that aims to helps people create remote or in-person events so that users can easily and efficiently connect with friends and make new ones. Our mission is simple: create a simple way to allow folks to get together while doing something they love, like playing Dungeons and Dragons or Super Smash Brothers.
 
+[Link to video demo](https://drive.google.com/file/d/1Xmv_lHfU-VP4zZsccGv9stBnyaoZvgV_/view?usp=sharing)
+
 # Installation
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -36,9 +38,7 @@ Grouper is an application based in Austin, Texas that aims to helps people creat
 - Simply visit the hosted application on Heroku and enjoy!
 - Check out the giphy to see a short demo, or watch our video recording of the application linked below.
 
-[Link to hosted application on Heroku]()
-
----
+[Link to hosted application on Heroku](https://the-grouper-app.herokuapp.com/)
 
 ![Giphy of application](./public/image/Screenshots/project_2_giphy.gif)
 
