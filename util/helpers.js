@@ -6,5 +6,10 @@ module.exports = {
 	},
 	format_time: (time) => {
 		return moment(time, 'HH:mm:ss').format('h:mm A');
+	},
+	format_category: (category) => {
+		let catArr = category.split(' ');
+		let reformated = catArr.join('');
+		return reformated;
 	}
 };

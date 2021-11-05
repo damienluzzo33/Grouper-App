@@ -1,38 +1,58 @@
 <div style="margin-top: 15px;">
     <div class="row center-align" style="width:100%;">
         <div class="col s12 m6">
-            <img class="col s12" src="/image/board_games/board_games_2.jpg"
-                style="background-position:center; background-size:contain; height:100%;">
+            <img class="category-image" src="../image/{{format_category mappedEvent.event_category}}.jpg">
         </div>
-        <div class="col s12 m6 left-align">
-            <div>
-                <h4> {{event.event_name}} </h4>
-                <h5> By: {{event.user.username}} </h5>
-                <p> {{format_date event.event_date}} </p>
-                <p> {{format_time event.start_time}} to {{format_time event.end_time}} </p>
-            </div>
-            <div>
-                <h5>{{event.event_category}}</h5>
-                <p>{{event.event_description}}</p>
+        <div class="col s12 m6 center-align">
+            <div class="row">
+                <div class="col s12">
+                <h4> {{mappedEvent.event_name}} </h4>
+                </div>
+                <div class="col s12 center-align">
+                    <div class="row">
+                        <h5 class="col s6"> By: {{mappedEvent.user.username}} </h5>
+                        <div class="chip col s6" style="height:auto; width:auto; display:flex; align-content:center; margin-top: 24px; margin-left: 24px;">
+                        <i class="material-icons" style="margin-top: 4px; margin-right: 4px;">event</i>
+                        {{mappedEvent.event_category}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 center-align">
+                    <div class="row">
+                        <div class="col s6 center-align">
+                            <p class="center-align" style="text-decoration: underline;">Event Date</p>
+                            <p class="center-align">{{format_date mappedEvent.event_date}} </p>
+                        </div>
+                        <div class="col s6">
+                            <div class="row center-align" style="margin-right: 36px;">
+                                <p class="col s12 center-align"><i class="material-icons">play_arrow</i>{{format_time mappedEvent.start_time}}</p>
+                                <p class="col s12 center-align"><i class="material-icons">stop</i>{{format_time mappedEvent.end_time}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="row center-align">
+    <div class="row center-align" style="margin-top: -100px;">
+        <div class="col s12">
+            <p>{{mappedEvent.event_description}}</p>
+        </div>
         <div class="col s6">
             <h5 class="black-text">Contact</h5>
-            <a class="waves-effect waves-light btn-floating" href="mailto:{{event.user.email}}">
+            <a class="waves-effect waves-light btn-floating" href="mailto:{{mappedEvent.user.email}}">
                 <i class="material-icons">email</i>
             </a>
         </div>
         <div class="col s6">
             <h5 class="black-text">Location</h5>
             <ul>
-                {{#if event.in_person}}
-                <li>{{event.location}}</li>
+                {{#if mappedEvent.in_person}}
+                <li>{{mappedEvent.location}}</li>
                 <li>Austin, Texas</li>
                 {{else}}
                 <li>Virtual Event</li>
-                <li><a href="{{event.location}}">Zoom Link For This Event</a></li>
+                <li><a href="{{mappedEvent.location}}">Zoom Link For This Event</a></li>
                 {{/if}}
             </ul>
         </div>
@@ -40,12 +60,12 @@
     <div class="row center-align">
         <div class="col s12">
             {{#if owner}}
-            <button class="btn red waves-effect waves-light white-text" data-id="{{event.id}}" type="submit" name="delete">Delete
+            <button id="delete-event-btn" class="btn red waves-effect waves-light white-text" data-delete="{{mappedEvent.id}}" type="submit" name="delete">Delete
                 <i class="material-icons right">delete_forever</i>
             </button>
             {{else}}
                 {{!-- {{#if attending}} --}}
-                <button class="btn blue waves-effect waves-light white-text" type="submit" name="rsvp">RSVP
+                <button id="save-event-btn" class="btn blue waves-effect waves-light white-text" data-id="{{mappedEvent.id}}" type="submit" name="rsvp">RSVP
                     <i class="material-icons right">group_add</i>
                 </button>
                 {{!-- {{else}}
@@ -57,4 +77,9 @@
         </div>
     </div>
 </div>
-<script src="./js/createEvent.js"></script>
+
+{{#if owner}}
+<script src="../js/deleteEvent.js"></script>
+{{else}}
+<script src="../js/saveEvent.js"></script>
+{{/if}}

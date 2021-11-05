@@ -1,10 +1,11 @@
 //*  create a function that allows the user to delete an event that they have created
 const deleteEventHandler = async (event) => {
     //* if the data-id attribute exists for the event, then get it and use it to delete corresponding event
-    if (event.target.hasAttribute('data-id')) {
-        const eventId = event.target.getAttribute('data-id');
+    if (event.target.hasAttribute('data-delete')) {
+        const eventId = event.target.getAttribute('data-delete');
         const response = await fetch(`/api/events/${eventId}`, {
-            method: 'DELETE'
+            method: 'DELETE',
+            headers: { 'Content-Type': "application/json" }
         });
         //* if the response comes back okay, then send the user back to the dashboard
         if (response.ok) document.location.replace('/dashboard');
