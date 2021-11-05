@@ -27,6 +27,16 @@ router.post('/', authorization, async (req, res) => {
     }
 });
 
+router.get('/:id', authorization, async (req, res) => {
+    try {
+        const foundEvent = await Event.findByPk(req.params.id);
+        if (!foundEvent) res.status(404).json({ message: "Event not found... try again!"});
+        res.status(200).json({foundEvent, message: "Great Job! Enjoy the event!"})
+    } catch (err) {
+        res.status(400).json(err);
+    }
+})
+
 //* DELETE an event
 router.delete('/:id', authorization, async (req, res) => {
     try {

@@ -10,7 +10,14 @@ const saveEventHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
         const eventId = event.target.getAttribute('data-id');
 
-        allSavedEventIds.push(eventId);
+        const response = await fetch(`/api/events/${eventId}`, {
+            method: 'GET',
+            headers: { 'Content-Type': "application/json" }
+        });
+
+        console.log(response.json())
+        let obj = response.json();
+        allSavedEventIds.push(obj);
 
         localStorage.setItem('savedEvents', JSON.stringify(allSavedEventIds));
 
