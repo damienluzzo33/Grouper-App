@@ -48,7 +48,7 @@ Grouper is an application based in Austin, Texas that aims to helps people creat
 ![Login / Sign Up](./public/images/login_page.png)
 ---
 ### This is where the user is able to create an event
-![Create Event](./public/images/event.log.png),
+![Create Event](./public/images/event.log.png)
 ---
 ### This is the User Dashboard
 ![Dashboard]()

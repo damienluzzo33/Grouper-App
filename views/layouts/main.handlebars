@@ -17,6 +17,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap" rel="stylesheet">
+    <!-- Our styles -->
+    {{#if weirdRoute}}
+    <link rel="stylesheet" href="../css/styles.css">
+    {{else}}
+    <link rel="stylesheet" href="./css/styles.css">
+    {{/if}}
     <!-- TITLE -->
     <title>Event Form</title>
 </head>
@@ -24,18 +30,28 @@
 <body>
     <nav>
         <div class="nav-wrapper">
-        <a href="" class="brand-logo" style="margin-left: 15px;"><i class="material-icons">group</i> GROUPER</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-            {{#if loggedIn}}
-            <li><a href="/dashboard">Dashboard</a></li>
-            <li><a href="/">Find Events</a></li>
-            <li><a href="/create">Create New Event</a></li>
-            {{else}}
-            <li><a href="/login">Login</a></li>
-            {{/if}}
-        </ul>
+            <a href="/" class="brand-logo" style="margin-left: 15px;"><i class="material-icons" id="mainTitleIcon">group</i>GROUPER</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                {{#if loggedIn}}
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/">Find Events</a></li>
+                <li><a href="/create">Create New Event</a></li>
+                {{else}}
+                <li><a href="/login">Login</a></li>
+                {{/if}}
+            </ul>
         </div>
     </nav>
+    <ul class="sidenav" id="mobile-demo">
+        {{#if loggedIn}}
+        <li><a class="white-text" href="/dashboard">Dashboard</a></li>
+        <li><a class="white-text" href="/">Find Events</a></li>
+        <li><a class="white-text" href="/create">Create New Event</a></li>
+        {{else}}
+        <li><a class="white-text" href="/login">Login</a></li>
+        {{/if}}
+    </ul>
 
     {{{body}}}
 
@@ -43,9 +59,9 @@
         <div class="container">
             <div class="row">
                 <div class="center-align">
-                    <h5 class="black-text">Grouper</h5>
+                    <h5 class="white-text">Grouper</h5>
                     <h6> Organizer of Group Events </h6>
-                    <h7> Grouper is an app designed to create and organize group events in person and through zoom bla bla bla bla bla bla</h7>
+                    <h7> Grouper is an app designed to create and organize group events in person and on zoom</h7>
                 </div>
             </div>
         </div>
@@ -58,3 +74,8 @@
 </body>
 
 </html>
+{{#if weirdRoute}}
+<script src="../js/materialize.js"></script>
+{{else}}
+<script src="./js/materialize.js"></script>
+{{/if}}

@@ -1,18 +1,29 @@
-<div class="card hoverable">
-    <div class="card-image">
+<div class="card hoverable" style="border-radius: 15px !important;">
+    <div class="card-image previewed-image" style="border-radius: 15px !important;">
         <a href="/events/{{id}}" alt="go to the main page for this event">
-        <img src="https://i.imgur.com/xqLnaoL.jpeg"></a>
+            <img style="border-radius: 15px 15px 0px 0px !important;" src="./image/{{format_category event_category}}.jpg">
+        </a>
     </div>
-    <div class="card-content black-text">
-        <span class="card-title"><a href="/events/{{id}}" alt="get more details about this event">{{event_name}}</a></span>
+    <div class="card-content center-align titleContainer">
+        <span class="card-title"><a style="text-decoration: none; color: white;" href="/events/{{id}}" alt="get more details about this event">{{event_name}}</a></span>
     {{!-- <div> --}}
         {{!-- This should be the little icon tag thing that looks like a tiny badge --}}
     {{!-- </div> --}}
-        <p>{{user.username}}</p>
+        {{!-- <p>{{user.username}}</p> --}}
     </div>
-    <div class="card-action">
-        <p>{{location}}</p>
-        <p>{{format_date event_date}}</p>
-        <p>{{format_time start_time}} to {{format_time end_time}}</p>
+    <div class="row card-content center-align" style="border-radius: 0px 0px 15px 15px !important;">
+        <div class="col m-4 s-6">
+            {{#if in_person}}
+            <p>{{location}}</p>
+            {{else}}
+            <p>Zoom</p>
+            {{/if}}
+        </div>
+        <div class="col m-4 s-6 center-align">
+            <p>{{format_date event_date}}</p>
+        </div>
+        <div class="col m-4 s-12 center-align">
+            <span class="center-align">{{format_time start_time}} to {{format_time end_time}}</span>
+        </div>
     </div>
 </div>

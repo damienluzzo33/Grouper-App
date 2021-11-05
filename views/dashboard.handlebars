@@ -1,12 +1,31 @@
 <div class="container">
     {{#if noEvents}}
     <div class="center-align">
-        <h5>YOU HAVE NOT SAVED OR CREATED AN EVENT!</h5>
+        <h5>YOU HAVE NO EVENTS!</h5>
     </div>
     {{else}}
+    <h2 class="center-align">YOUR EVENTS</h2>
+    {{#each mappedUserEvents as |event|}}
 
-    {{#each events as |event|}}
-    {{>event-details}}
+    <div class="card hoverable">
+        <div class="card-image">
+            <a href="/events/{{event.id}}" alt="go to the main page for this event">
+            <img src="./image/{{format_category event.event_category}}.jpg"></a>
+        </div>
+        <div class="card-content black-text">
+            <span class="card-title"><a href="/events/{{event.id}}" alt="get more details about this event">{{event.event_name}}</a></span>
+        {{!-- <div> --}}
+            {{!-- This should be the little icon tag thing that looks like a tiny badge --}}
+        {{!-- </div> --}}
+            <p>{{event.user.username}}</p>
+        </div>
+        <div class="card-action">
+            <p>{{event.location}}</p>
+            <p>{{format_date event.event_date}}</p>
+            <p>{{format_time event.start_time}} to {{format_time event.end_time}}</p>
+        </div>
+    </div>
+
     {{/each}}
 
     {{/if}}
