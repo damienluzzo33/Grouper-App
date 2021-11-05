@@ -10,8 +10,8 @@
 
 
 // const sequelize = require('../config/connection');
-const Event = require('./Event');
-const User = require('./User');
+const Event = require('./Event.js');
+const User = require('./User.js');
 
 User.hasMany(Event, {
     foreignKey: 'user_id'
@@ -21,7 +21,7 @@ Event.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
-module.exports = { User, Event }
+module.exports = { User, Event };
 
 
 // // creating promise =============================================================================
