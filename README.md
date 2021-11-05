@@ -37,11 +37,15 @@ Grouper is an application based in Austin, Texas that aims to helps people creat
 - Check out the giphy to see a short demo, or watch our video recording of the application linked below.
 
 [Link to hosted application on Heroku]()
+
+---
+
 ![Giphy of application](./public/image/Screenshots/project_2_giphy.gif)
 
 # Screenshots
 
 ### This is the Homepage
+
 ![Homepage](./public/image/Screenshots/screenshot2.jpg)
 ---
 ### This is the Login / Sign-Up page for the application
