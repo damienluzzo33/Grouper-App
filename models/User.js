@@ -3,10 +3,7 @@ var bcrypt = require("bcrypt");
 const sequelize = require('../config/connection');
 const { Model, DataTypes } = require('sequelize');
 
-// model  ==========================================================================================================================================================
-
-// module.exports = function(sequalize, DataTypes) {
-//     var User = sequalize.define("User", {
+// model  =========================================================
 
 class User extends Model {
     validatePassword(loginPassword) {
@@ -51,8 +48,8 @@ User.init(
             },
         },
         sequelize,
-		timestamps: true,
-		updatedAt: false,
+		// timestamps: true,
+		// updatedAt: false,
 		freezeTableName: true,
 		underscored: true,
 		modelName: 'user'
@@ -60,30 +57,3 @@ User.init(
 );
 
 module.exports = User;
-
-// CHECK PASSWORD with database password. =============================================================================
-// User.prototype.validPassword = function(password) {
-//     return bcrypt.compareSync(password, this.password);
-// };
-
-// MAKE SURE THAT THE 
-// User.addHook("beforeCreate", function (user) {
-//     user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null
-// );
-// });
-
-// // come back a little bit confused on which ones to associate =============================================================================
-// User.associate = function(models) {
-//     models.User.hasMany(models.Events, {
-//         onDelete: "CASCADE"
-//     }),
-//     model.User.hasMany(model.Location, {
-//         onDelete: "CASCADE"
-//     }) 
-//     models.User.hasMany(models.Events, {
-//         onDelete: "CASCADE"
-    
-//     });
-// };
-
-// return User; 
