@@ -15,8 +15,9 @@ const saveEventHandler = async (event) => {
             headers: { 'Content-Type': "application/json" }
         });
 
-        console.log(response.json())
+        console.log(response);
         let obj = await response.json();
+        console.log(obj);
         allSavedEventIds.push(obj);
 
         localStorage.setItem('savedEvents', JSON.stringify(allSavedEventIds));
