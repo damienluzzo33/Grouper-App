@@ -18,7 +18,8 @@ router.get('/', async (req, res) => {
             res.render('homepage', { events, loggedIn: req.session.loggedIn });
             return;
         }
-		res.render('homepage', { events, loggedIn: req.session.loggedIn });
+		const weirdRoute = false;
+		res.render('homepage', { events, weirdRoute: weirdRoute, loggedIn: req.session.loggedIn });
 	} catch (err) {
 		console.log(err);
 		res.status(500).json(err);
@@ -27,7 +28,8 @@ router.get('/', async (req, res) => {
 
 router.get('/create', authorization, async (req, res) => {
 	try {
-		res.render('create-event', {loggedIn: req.session.loggedIn});
+		const weirdRoute = false;
+		res.render('create-event', {weirdRoute: weirdRoute, loggedIn: req.session.loggedIn});
 	} catch (err) {
 		console.log(err);
 		res.status(500).json(err);
@@ -38,11 +40,11 @@ router.get('/create', authorization, async (req, res) => {
 router.get('/login', async (req, res) => {
 	try {
 		if (!req.session.loggedIn) {
-			
 			res.render('login-signup');
 			return;
 		}
-		res.render('homepage');
+		const weirdRoute = false;
+		res.render('homepage', {weirdRoute: weirdRoute});
 	} catch (err) {
 		console.log(err);
 		res.status(500).json(err);
@@ -59,14 +61,33 @@ router.get('/events/:id', authorization, async (req, res) => {
 				as: 'user'
 			}]
 		});
-		const event = thisEventData.get({ plain: true });
-		const owner = (event.user_id === req.session.user_id);
-		// const attending
-		res.render('event', { event, owner: owner, loggedIn: req.session.loggedIn });
+		const mappedEvent = thisEventData.get({ plain: true });
+		const owner = mappedEvent.user_id == req.session.userId;
+		const weirdRoute = true;
+		res.render('event', { mappedEvent, weirdRoute: weirdRoute, owner: owner, loggedIn: req.session.loggedIn });
 	} catch (err) {
 		console.log(err);
 		res.status(500).json(err);
 	}
 });
+
+//* get one event and use authorization middleware
+// router.get('/events/saved/:id', authorization, async (req, res) => {
+// 	try {
+// 		let allSavedEvents = JSON.parse(localStorage.getItem('savedEvents'));
+
+// 		const thisEventData = await Event.findByPk(req.params.id, {
+// 			where: {
+// 				id: req.params.id
+// 			}
+// 		});
+// 		const mappedEvent = thisEventData.get({ plain: true });
+
+// 		res.render('event', { mappedEvent, owner: owner, loggedIn: req.session.loggedIn });
+// 	} catch (err) {
+// 		console.log(err);
+// 		res.status(500).json(err);
+// 	}
+// });
 
 module.exports = router;

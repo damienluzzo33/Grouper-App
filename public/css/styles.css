@@ -4,6 +4,109 @@
     --mid-blue: #638bba ;
     --sky-blue: #77a8e0;
     --lightest-blue: #84bbfa;
-    
+}
 
+html {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem;
+}
+
+nav .nav-wrapper {
+    background-color: var(--ultra-dark-blue) !important;
+}
+
+body {
+    background-color: var(--lightest-blue);
+}
+
+.page-footer {
+    background-color: var(--dark-blue);
+}
+
+.footer-copyright {
+    background-color: var(--ultra-dark-blue) !important;
+}
+
+.sidenav {
+    background-color: var(--dark-blue);
+    padding-top: 15px;
+}
+
+.sidenav li {
+    background-color: var(--ultra-dark-blue);
+    border-radius: 25px;
+    margin: 0 15px 15px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5px;
+    height: 60px
+}
+
+.sidenav li a {
+    font-size: 167%;
+}
+
+#loginBox {
+    background-color: var(--ultra-dark-blue);
+}
+
+#signUpBox {
+    background-color: var(--dark-blue);
+}
+
+#signup-btn {
+    color: var(--dark-blue);
+}
+
+#login-btn {
+    color: var(--ultra-dark-blue);
+}
+
+.previewed-image {
+    max-height: 300px !important;
+}
+
+.previewed-image img {
+    max-height: 300px;
+}
+
+.category-image {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 3px 3px 5px var(--dark-blue);
+}
+
+.titleContainer {
+    padding-bottom: 0px;
+    background-color: var(--dark-blue);
+    margin-top: 5px;
+}
+
+#formContainer {
+    background-color: var(--sky-blue);
+    color: var(--ultra-dark-blue);
+}
+
+#formContainer label {
+    color: black;
+}
+
+#formContainer input {
+    background-color: var(--dark-blue);
+    color:white;
+    padding-left: 10px;
+}
+
+#newBtn {
+    background-color: var(--ultra-dark-blue);
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width: 400px) {
+    #mainTitleIcon {
+        display: none;
+    }
+    
 }

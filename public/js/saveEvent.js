@@ -1,17 +1,23 @@
+let allSavedEventIds = JSON.parse(localStorage.getItem('savedEvents'));
+
+if (!allSavedEventIds) {
+    allSavedEventIds = [];
+}
+
 //* create a function that allows the user to RSVP / SAVE an event to their dashboard
 const saveEventHandler = async (event) => {
     //* if the data-id attribute exists for the event, then get it and use it to save the corresponding event
     if (event.target.hasAttribute('data-id')) {
         const eventId = event.target.getAttribute('data-id');
-        const response = await fetch(`/api/events/saved/${eventId}`, {
-            method: 'POST',
-            body: JSON.stringify({ eventId: eventId }),
-            headers: { 'Content-Type': "application/json" }
-        });
+
+        allSavedEventIds.push(eventId);
+
+        localStorage.setItem('savedEvents', JSON.stringify(allSavedEventIds));
+
         //* if the response comes back okay, then send the user back to the dashboard
-        if (response.ok) document.location.replace('/dashboard');
-        //*  otherwise alert them with failure message
-        else alert('Failed to delete event. Try again!')
+        document.location.replace('/dashboard');
+    } else {
+        alert('Failed to save event. Try again!')
     }
 }
 

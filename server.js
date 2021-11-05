@@ -44,7 +44,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(router);
 
 // sync models (console log to test) ==================================================
-sequelize.sync({ force: false }).then(function() {
+sequelize.sync({ force: true }).then(function() {
     app.listen(PORT, function() {
         console.log(`Grouper App listening on port ${PORT}!`);
     });

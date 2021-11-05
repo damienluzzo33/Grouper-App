@@ -37,23 +37,24 @@ Grouper is an application based in Austin, Texas that aims to helps people creat
 - Check out the giphy to see a short demo, or watch our video recording of the application linked below.
 
 [Link to hosted application on Heroku]()
-![Giphy of application]()
+![Giphy of application](./public/image/project_2_giphy.gif)
 
+# Screenshots
 
 ### This is the Homepage
-![Homepage]()
+![Homepage](./public/image/screenshot2.jpg)
 ---
 ### This is the Login / Sign-Up page for the application
-![Login / Sign Up](./templates/image/Readme.image/login_page.png)
+![Login / Sign Up](./public/image/screenshot1.jpg)
 ---
 ### This is where the user is able to create an event
-![Create Event](./templates/image/Readme.image/event.log.png),
+![Create Event](./public/image/screenshot4.jpg)
 ---
 ### This is the User Dashboard
-![Dashboard]()
+![Dashboard](./public/image/screenshot5.jpg)
 ---
 ### This is the Event Preview Page
-![Event Details]()
+![Event Details](./public/image/screenshot3.jpg)
 ---
 
 # Features
@@ -91,11 +92,11 @@ Grouper is an application based in Austin, Texas that aims to helps people creat
 
 # Initial WireFrame Sketches:
 
-![image name](./templates/image/Readme.image/wireframe.png)
+![image name](./public/images/wireframe.png)
 
-![image name](./templates/image/Readme.image/user_login.png)
+![image name](./public/images/user_login.png)
 
-![image name](./templates/image/Readme.image/event_create_screenshot.png)
+![image name](./public/images/event_create_screenshot.png)
 
 * Add custom categories for event creation
 * Connect with other app-users nearby
