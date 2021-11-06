@@ -1,7 +1,7 @@
 //* import the express router and the event model
 const router = require('express').Router();
 const authorization = require('../../util/auth');
-const { Event } = require('../../models');
+const { Event, User } = require('../../models');
 
 //* CREATE new event
 router.post('/', authorization, async (req, res) => {
@@ -29,7 +29,13 @@ router.post('/', authorization, async (req, res) => {
 
 router.get('/:id', authorization, async (req, res) => {
     try {
-        const foundEvent = await Event.findByPk(req.params.id);
+        const foundEvent = await Event.findByPk(req.params.id, {
+            include: [{ 
+				model: User,
+				foreignKey: 'user_id',
+				as: 'user'
+			}]
+        });
         if (!foundEvent) res.status(404).json({ message: "Event not found... try again!"});
         res.status(200).json({foundEvent, message: "Great Job! Enjoy the event!"})
     } catch (err) {
