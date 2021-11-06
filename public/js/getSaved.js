@@ -44,6 +44,6 @@ if (allSavedEvents) {
     </div>
 </div>
         `
-        dashboardDisplay.appendChild(htmlString);
+        dashboardDisplay.append(htmlString);
     }
 }
