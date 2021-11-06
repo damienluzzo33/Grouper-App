@@ -1,4 +1,4 @@
-<div class="container">
+<div id="dashboard" class="container">
     {{#if noEvents}}
     <div class="center-align">
         <h5>YOU HAVE NO EVENTS!</h5>
@@ -10,13 +10,11 @@
     <div class="card hoverable">
         <div class="card-image">
             <a href="/events/{{event.id}}" alt="go to the main page for this event">
-            <img src="./image/{{format_category event.event_category}}.jpg"></a>
+                <div class="imageFrame" style="background-image: url('./image/{{format_category event.event_category}}.jpg');"></div>
+            </a>
         </div>
         <div class="card-content black-text">
             <span class="card-title"><a href="/events/{{event.id}}" alt="get more details about this event">{{event.event_name}}</a></span>
-        {{!-- <div> --}}
-            {{!-- This should be the little icon tag thing that looks like a tiny badge --}}
-        {{!-- </div> --}}
             <p>{{event.user.username}}</p>
         </div>
         <div class="card-action">
@@ -30,3 +28,4 @@
 
     {{/if}}
 </div>
+<script src="./js/getSaved.js"></script>
