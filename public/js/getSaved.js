@@ -44,6 +44,6 @@ if (allSavedEvents) {
     </div>
 </div>
         `
-        dashboardDisplay.append(htmlString);
+        dashboardDisplay.element.insertAdjacentHTML('beforeend', htmlString);
     }
 }
