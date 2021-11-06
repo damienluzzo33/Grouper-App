@@ -1,7 +1,7 @@
-let allSavedEventIds = JSON.parse(localStorage.getItem('savedEvents'));
+let allSavedEvents = JSON.parse(localStorage.getItem('savedEvents'));
 
-if (!allSavedEventIds) {
-    allSavedEventIds = [];
+if (!allSavedEvents) {
+    allSavedEvents = [];
 }
 
 //* create a function that allows the user to RSVP / SAVE an event to their dashboard
@@ -15,12 +15,11 @@ const saveEventHandler = async (event) => {
             headers: { 'Content-Type': "application/json" }
         });
 
-        console.log(response);
         let obj = await response.json();
         console.log(obj);
-        allSavedEventIds.push(obj);
+        allSavedEvents.push(obj);
 
-        localStorage.setItem('savedEvents', JSON.stringify(allSavedEventIds));
+        localStorage.setItem('savedEvents', JSON.stringify(allSavedEvents));
 
         //* if the response comes back okay, then send the user back to the dashboard
         document.location.replace('/dashboard');
@@ -33,3 +32,4 @@ const saveEventHandler = async (event) => {
 const saveButton = document.querySelector('#save-event-btn');
 //* add event listener to the button and run above function on submit
 saveButton.addEventListener('click', saveEventHandler);
+
