@@ -1,11 +1,22 @@
-//* import helper functions
-const { format_date, format_time, format_category } = require('../../util/helpers');
-
 //* Get all the saved events from the local storage
 let allSavedEvents = JSON.parse(localStorage.getItem('savedEvents'));
 
 //*  get the button with the id of dashboard
 const dashboardDisplay = document.querySelector('#dashboard');
+
+function format_date(date) {
+    return `${new Date(date).getMonth() + 1}/${new Date(date).getDate()}/${new Date(date).getFullYear()}`;
+}
+
+function format_time(time) {
+    return moment(time, 'HH:mm:ss').format('h:mm A');
+}
+
+function format_category(category) {
+    let catArr = category.split(' ');
+    let reformated = catArr.join('');
+    return reformated;
+}
 
 if (allSavedEvents) {
     for (let event of allSavedEvents) {
